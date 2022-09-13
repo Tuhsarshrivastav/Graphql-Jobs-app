@@ -3,7 +3,6 @@ import React from "react";
 const Job = ({ item }) => {
   return (
     <div
-      key={item.id}
       className="py-8 flex flex-wrap md:flex-nowrap 
     "
     >

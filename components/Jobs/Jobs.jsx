@@ -6,7 +6,12 @@ const Jobs = ({ JobsInfo }) => {
     <section className="text-gray-600 body-font overflow-hidden">
       <div className="container px-5 py-24 mx-auto">
         <div className="-my-8 divide-y-2 divide-gray-200">
-          {JobsInfo.length > 0 && JobsInfo.map((item) => <Job item={item} />)}
+          {JobsInfo.length > 0 &&
+            JobsInfo.map((item, index) => (
+              <div key={index}>
+                <Job item={item} />
+              </div>
+            ))}
         </div>
       </div>
     </section>
