@@ -3,6 +3,7 @@ import React from "react";
 const Job = ({ item }) => {
   return (
     <div
+      key={item.id}
       className="py-8 flex flex-wrap md:flex-nowrap 
     "
     >
@@ -19,13 +20,13 @@ const Job = ({ item }) => {
           {item.title}
         </h2>
 
-        <a className="text-gray-500 inline-flex items-center mt-4 flex-wrap">
+        <span className="text-gray-500 inline-flex items-center mt-4 flex-wrap">
           {item.tags.map((tag) => (
             <p className="mr-2 mb-2 cursor-pointer border p-1 rounded-sm bg-slate-50">
               {tag.name}
             </p>
           ))}
-        </a>
+        </span>
       </div>
     </div>
   );
