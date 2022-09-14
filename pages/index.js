@@ -5,6 +5,9 @@ import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Job from "../components/Jobs/Job";
 export default function Home({ JobsInfo }) {
+  if (!JobsInfo) {
+    return <> Project not found </>;
+  }
   return (
     <>
       <Head>
@@ -17,9 +20,9 @@ export default function Home({ JobsInfo }) {
       <section className="text-gray-600 body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="-my-8 divide-y-2 divide-gray-200">
-            {JobsInfo.map((item) => (
-              <div key={item.id}>
-                <Job item={item} key={item.key} />
+            {JobsInfo.map((item, index) => (
+              <div key={index}>
+                <Job item={item} id={item.key} />
               </div>
             ))}
           </div>

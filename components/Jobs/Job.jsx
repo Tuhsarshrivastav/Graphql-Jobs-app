@@ -1,9 +1,10 @@
 import React from "react";
 
-const Job = ({ item, key }) => {
+const Job = ({ item, id }) => {
+  console.log("imp", item.id);
   return (
     <div
-      key={key}
+      key={item.id}
       className="py-8 flex flex-wrap md:flex-nowrap 
     "
     >
