@@ -1,19 +1,22 @@
 import React from "react";
 
-const Job = ({ item, id }) => {
-  console.log("imp", item.id);
+const Job = ({ item }) => {
   return (
     <div
-      key={item.id}
       className="py-8 flex flex-wrap md:flex-nowrap 
     "
     >
       <div className="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
-        <span className="font-semibold title-font text-gray-700">
+        <span
+          key={item.company.name}
+          className="font-semibold title-font text-gray-700"
+        >
           {item.company.name}
         </span>
         <span className="mt-1 text-gray-500 text-sm">
-          {item.remotes.map((remote) => remote.name)}
+          {item.remotes.map((remote, index) => (
+            <p key={index}>{remote.name}</p>
+          ))}
         </span>
       </div>
       <div className="md:flex-grow">
